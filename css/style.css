@@ -1,0 +1,47 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+#grid{
+  height: 75vh;
+  display: flex;
+  flex-flow: column nowrap;
+  border: 3px solid cyan;
+}
+
+.row {
+  display: flex;
+  border: 3px solid red;
+  flex-basis: 100%;
+  height: 100%;
+}
+
+.column {
+  display: flex;
+  border: 3px solid limegreen;
+  border-right: 3px solid limegreen;
+  flex-basis: 100%;
+}
+
+.gridBlack{
+
+}
+
+.gridColor{
+  
+}
