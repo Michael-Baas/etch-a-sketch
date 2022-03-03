@@ -2,46 +2,57 @@
 
 
 const reset = document.querySelector('#reset')
-
+console.log(reset)
 const slider = document.querySelector('#gridSizeSlider')
 
-const grid = querySelector('#grid')
+
 
 slider.oninput = makeGrid
 
 function makeGrid(){
 
+
     newValue = slider.value;
-    console.log(newValue)
-    oldValue = document.querySelector('#grid').childElementCount
-    console.log(oldValue)
+
+    oldValue = grid.childElementCount
     dif = newValue - oldValue
-    console.log(dif, oldValue)
     if(dif > 0) {
         makeRows(dif, newValue)
     }
     if(dif < 0){
         removeRows(dif)
     }
-    
+     
     const pixels = document.querySelectorAll('.column')
     
 
 
-    function makeRows(dif, newValue){
+    function makeRows(dif){
+       
+
 
         for (i = 1; i < (dif+1); i++){
+            // 
+            const grid = document.querySelector('#grid')
+
+            const newRow = document.createElement("div")
+            newRow.className = 'row'
+            let newColumn = document.createElement("span");
+            // grid.appendChild(newRow)
+             newColumn.className = "column";
+
+    // grid.firstElementChild.appendChild(newColumn)
             // Create Rows
-            const rowFirstChild = document.querySelector('#grid > .row');
+            const rowFirstChild = grid.firstChild;
             const rowParent = rowFirstChild.parentNode;
-            let newRow = document.createElement("div")
+            newRow = document.createElement("div")
             newRow.className = 'row'
             rowParent.insertBefore(newRow, rowFirstChild.nextSibling)
         } 
         const columns = document.querySelectorAll('.row')
         console.log(columns)
         columns.forEach(column => {
-            for(i = 1; i < newValue; i++){
+            for(i = 1; i < dif+1; i++){
                 // console.log(column)
                 const columnFirstChild = column;
                 // let columnParent = columnFirstChild.parentNode;
