@@ -2,77 +2,66 @@
 
 
 const reset = document.querySelector('#reset')
-console.log(reset)
+// console.log(reset)
 const slider = document.querySelector('#gridSizeSlider')
+
 
 
 
 slider.oninput = makeGrid
 
 function makeGrid(){
-
+    
 
     newValue = slider.value;
-
+    console.log(newValue)
     oldValue = grid.childElementCount
+    console.log(oldValue)
     dif = newValue - oldValue
+    // nv2 = 
     if(dif > 0) {
-        makeRows(dif, newValue)
+        makeRows(newValue, oldValue, newValue)
     }
     if(dif < 0){
-        removeRows(dif)
+        // removeRows(newValue,oldValue, dif)
+        makeRows(newValue, oldValue, newValue)
     }
      
     const pixels = document.querySelectorAll('.column')
     
 
 
-    function makeRows(dif){
-       
-
-
-        for (i = 1; i < (dif+1); i++){
-            // 
-            const grid = document.querySelector('#grid')
-
-            const newRow = document.createElement("div")
-            newRow.className = 'row'
-            let newColumn = document.createElement("span");
-            // grid.appendChild(newRow)
-             newColumn.className = "column";
-
-    // grid.firstElementChild.appendChild(newColumn)
-            // Create Rows
-            const rowFirstChild = grid.firstChild;
-            const rowParent = rowFirstChild.parentNode;
-            newRow = document.createElement("div")
-            newRow.className = 'row'
-            rowParent.insertBefore(newRow, rowFirstChild.nextSibling)
-        } 
-        const columns = document.querySelectorAll('.row')
-        console.log(columns)
-        columns.forEach(column => {
-            for(i = 1; i < dif+1; i++){
-                // console.log(column)
-                const columnFirstChild = column;
-                // let columnParent = columnFirstChild.parentNode;
-                // console.log(columnParent)
-                let newPixel = document.createElement("span");
-                newPixel.className = "column";
-    
-                columnFirstChild.insertBefore(newPixel, columnFirstChild.firstChild)
-
-            }
-
-        })
+    function makeRows(dif, oldValue, newValue){
+        const grid = document.querySelector('#grid')
+        
+        deleteAllChildren(grid)
+        
+            for (i = 0; i < (newValue); i++){
+                // make rows
+                
+                const newRow = document.createElement("div")
+                newRow.className = 'row'
+                grid.appendChild(newRow)
+            } 
+            const rows = document.querySelectorAll('.row')
+            rows.forEach(row => {
+                for(i = 0; i < newValue; i++){
+                    console.log(oldValue)
+                    let newColumn = document.createElement("span");
+                    newColumn.className = "column";
+                    row.appendChild(newColumn) 
+                }
             
-            console.log(document.querySelector('#grid').firstElementChild.childNodes.length)
-            //Create Columns
+            })
+     
+     }
+            // console.log(document.querySelector('#grid').firstElementChild.childNodes.length)
+            // //Create Columns
             
         
         
 
-        }
+        
 
 
 
@@ -125,20 +114,12 @@ function makeGrid(){
             return `rgb(${red},${green},${blue},${alpha})`
         }
     }
-    
-    
-    function removeRows(dif){
-        for(i = 0; i <  Math.abs(dif); i++){
-            const gridContainer = document.querySelector('#grid')
-            gridContainer.removeChild(gridContainer.lastChild)
-            const rowContainer = document.querySelector('.row')
-            rowContainer.removeChild(rowContainer.lastChild)
+        
+        function deleteAllChildren(parentNode){
+        while(parentNode.firstChild){
+            parentNode.removeChild(parentNode.firstChild)
         }
     }
-    
-
-
-
 
 
 

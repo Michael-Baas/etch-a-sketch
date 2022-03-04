@@ -17,24 +17,30 @@
 /* ADDITIONAL STYLES
 /*******************************************/
 
+body{
+  display: flex; 
+  flex-direction: column;
+  width: 80%;
+}
+
 #grid{
   height: 75vh;
   display: flex;
   flex-flow: column nowrap;
-  border: 3px solid cyan;
+  border: 1px solid cyan;
 }
 
 .row {
   display: flex;
-  border: 3px solid red;
+  border: 1px solid red;
   flex-basis: 100%;
   height: 100%;
 }
 
 .column {
   display: flex;
-  border: 3px solid limegreen;
-  border-right: 3px solid limegreen;
+  border: 1px solid limegreen;
+  border-right: 1px solid limegreen;
   flex-basis: 100%;
 }
 
