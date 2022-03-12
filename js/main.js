@@ -54,16 +54,7 @@ function makeGrid(){
             })
      
      }
-            // console.log(document.querySelector('#grid').firstElementChild.childNodes.length)
-            // //Create Columns
-            
-        
-        
-
-        
-
-
-
+             // //Create Columns
         pixels.forEach((pixel) => { 
             pixel.addEventListener('mouseover', () => { // Add mouseover smurfs to all pixels
                 randomColorCheck = document.querySelector('#randomColor').checked
@@ -76,7 +67,6 @@ function makeGrid(){
                 }
             })
         })
-
 
         reset.addEventListener('click', () => {
             pixels.forEach((pixel) => {
@@ -102,7 +92,7 @@ function makeGrid(){
         function randomColor(){
             function color(){
                 min = 0
-                max = 256
+                max = 246
                 return Math.floor(Math.random() * Math.floor(256))
             }
             let red = color()
