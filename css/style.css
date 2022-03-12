@@ -18,30 +18,64 @@
 /*******************************************/
 
 body{
-  display: flex; 
+  font-size: 1.6em;
+  background-color: #F4F6F4;
+  
+  font-family: 'Source Sans Pro', sans-serif;
+} 
+
+.controls{
+  display: flex;
   flex-direction: column;
-  width: 80%;
+  border: 2px solid #d3d3d3;
+  align-items: center;
+  justify-content: center;
+  border-radius: .3em;
+  background-color: #333;
+  color: #d3d3d3;
+  align-self: center;
+  padding: 2rem;
+}
+
+.controls button {
+  margin: 1em 0 0 0;
+  padding: 1em 2em;
+  border-radius: .4em;
+  background-color: #d3d3d3;
+}
+
+html{
+  font-size: 62.5%;
 }
 
 #grid{
-  height: 75vh;
+
   display: flex;
   flex-flow: column nowrap;
-  border: 1px solid cyan;
+  outline: .1px solid #d3d3d3;
+  min-height: 40rem;
+  min-width: 40rem;
 }
 
 .row {
   display: flex;
-  border: 1px solid red;
+  outline: .1px solid #d3d3d3;
   flex-basis: 100%;
   height: 100%;
 }
 
 .column {
   display: flex;
-  border: 1px solid limegreen;
-  border-right: 1px solid limegreen;
-  flex-basis: 100%;
+  outline: .1px solid #d3d3d3;
+  flex-basis: 100%; 
+}
+
+.slider + label {
+  margin-top: 1em;
+}
+
+.randomColor{
+  margin: 1em 0 0 0;
 }
 
 .gridBlack{
@@ -50,4 +84,14 @@ body{
 
 .gridColor{
   
+}
+
+.wrapper{
+  display: flex; 
+  justify-content: center;
+  padding-top: 10%;
+  width: 80%;
+  margin: 0 auto;
+  gap: 2em;
+  flex-wrap: wrap;
 }

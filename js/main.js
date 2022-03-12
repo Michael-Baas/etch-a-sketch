@@ -2,9 +2,8 @@
 
 
 const reset = document.querySelector('#reset')
-// console.log(reset)
 const slider = document.querySelector('#gridSizeSlider')
-
+const currentGridSize = document.querySelector('#currentGridSize');
 
 
 
@@ -12,12 +11,12 @@ slider.oninput = makeGrid
 
 function makeGrid(){
     
-
-    newValue = slider.value;
+    let newValue = slider.value;
+    currentGridSize.innerText = `${slider.value} x ${slider.value}`;
     console.log(newValue)
-    oldValue = grid.childElementCount
+    let oldValue = grid.childElementCount
     console.log(oldValue)
-    dif = newValue - oldValue
+    let dif = newValue - oldValue
     // nv2 = 
     if(dif > 0) {
         makeRows(newValue, oldValue, newValue)

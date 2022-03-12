@@ -8,23 +8,36 @@
 		<title>Etch-a-Sketch</title>
 
 		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+		<div class="wrapper">
 
-		<div>
-			<button id="reset">Reset</button>
-			<input type="range" id="gridSizeSlider" name="gridSize" min="0" max="64" value="0" step="4" >
-			<label for="gridSize">Select Grid Size</label>
-			<input type="checkbox" id="randomColor" name="randomColor">
-			<label for="randomColor">Random Color Mode?</label>
+			<div id="grid">
+				<!-- <div class="row">
+									<span class="column"></span>
+								</div> -->
+			</div>
+			<div class="controls">
+				
+				<div class="slider">
+					<label for="gridSize">Use Slider To Select Grid Size</label>
+					<input type="range" id="gridSizeSlider" name="gridSize" min="0" max="64" value="1" step="4">
+			
+				</div>
+				<label for="gridSize">Current Grid Size: <span id="currentGridSize"></span></label>
+				<div class="randomColor">
+					<input type="checkbox" id="randomColor" name="randomColor">
+					<label for="randomColor">Random Color Mode?</label>
+				</div>
+				<button id="reset">Reset</button>
+			</div>
 		</div>
-		<div id="grid">
-			<!-- <div class="row">
-				<span class="column"></span>
-			</div> -->
-	</div>
+		
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
