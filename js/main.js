@@ -72,18 +72,13 @@ function makeGrid(){
             pixel.addEventListener('mouseover', () => { // Add mouseover smurfs to all pixels
                 randomColorCheck = document.querySelector('#randomColor').checked
                 eraser = document.querySelector('#eraser').checked
-                if(randomColorCheck){
-                    eraser.checked = false;
-                    pixel.style.backgroundColor = randomColor()
-                } 
                 // Make background change on hover
-                else if(eraser){
-                    randomColorCheck.checked = false;
+                if(eraser){
                     pixel.style.backgroundColor = '#FFF'
                 }
-                // else if(randomColorCheck){
-                //     pixel.style.backgroundColor = randomColor()
-                // }
+                else if(randomColorCheck){
+                    pixel.style.backgroundColor = randomColor()
+                }
                 else{
                     pixel.style.backgroundColor = '#333'
                 }
