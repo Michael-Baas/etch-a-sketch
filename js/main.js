@@ -71,10 +71,19 @@ function makeGrid(){
         pixels.forEach((pixel) => { 
             pixel.addEventListener('mouseover', () => { // Add mouseover smurfs to all pixels
                 randomColorCheck = document.querySelector('#randomColor').checked
-                // Make background change on hover
+                eraser = document.querySelector('#eraser').checked
                 if(randomColorCheck){
+                    eraser.checked = false;
                     pixel.style.backgroundColor = randomColor()
+                } 
+                // Make background change on hover
+                else if(eraser){
+                    randomColorCheck.checked = false;
+                    pixel.style.backgroundColor = '#FFF'
                 }
+                // else if(randomColorCheck){
+                //     pixel.style.backgroundColor = randomColor()
+                // }
                 else{
                     pixel.style.backgroundColor = '#333'
                 }
@@ -83,9 +92,8 @@ function makeGrid(){
         // Random RGBa value
         function randomColor(){
             function color(){
-                min = 0
-                max = 246
-                return Math.floor(Math.random() * Math.floor(256))
+                let max = 246
+                return Math.floor(Math.random() * Math.floor(max))
             }
             let red = color()
             let blue = color()

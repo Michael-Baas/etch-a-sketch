@@ -56,6 +56,8 @@ html{
   min-height: 40rem;
   min-width: 40rem;
   background-color: white;
+  border: solid #e5001a 2em;
+  border-radius: .5em;
 }
 
 .row {
